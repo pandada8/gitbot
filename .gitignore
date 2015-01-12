@@ -1,0 +1,7 @@
+# Ignore the pycharm file
+.idea/
+# Ignore the pyc
+*.pyc
+# Also the virtualenv
+.env
+bower_components
