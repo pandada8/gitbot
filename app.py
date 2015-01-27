@@ -43,7 +43,7 @@ def payload():
     else:
         repo = repos[request.args.get('s')]
         sign = request.headers.get('X-Hub-Signature').split('=')[1]
-        sign_payload = hmac.new(repo['secret_key'].encode('UTF-8'),request.data.encode('UTF-8'),'sha1').hexdigest()
+        sign_payload = hmac.new(repo['secret_key'].encode('UTF-8'),request.data,'sha1').hexdigest()
         if not hmac.compare_digest(sign,sign_payload):
             return json.dumps({
                 'err':3,
