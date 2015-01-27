@@ -53,6 +53,7 @@ def payload():
         try:
             sub = subprocess.Popen(['git','pull'],cwd = os.path.expanduser(repo.get('path')),stdout = subprocess.PIPE, stderr=subprocess.PIPE)
             out,err = sub.communicate()
+            out,err = out.decode('UTF-8'), err.decode('UTF-8')
             ret = sub.returncode
             if ret == 0:
                 return json.dumps({'err':0,'msg':'finished successfully','stdout':out,'stderr':err})
