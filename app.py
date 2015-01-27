@@ -41,9 +41,9 @@ def payload():
             'msg':"Wrong Repo"
         }),400)
     else:
-        g.repo = repos[request.args.get('s')]
+        repo = repos[request.args.get('s')]
         sign = request.headers.get('X-Hub-Signature').split('=')[1]
-        sign_payload = hmac.new(g.repo.secret_key,request.data).hexdigest()
+        sign_payload = hmac.new(repo['secret_key'],request.data).hexdigest()
         if not hmac.compare_digest(sign,sign_payload):
             return json.dumps({
                 'err':3,
