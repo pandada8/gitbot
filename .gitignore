@@ -5,3 +5,4 @@
 # Also the virtualenv
 .env
 bower_components
+repos.json
