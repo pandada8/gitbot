@@ -51,7 +51,7 @@ def payload():
             })
         # Now we trust the post
         try:
-            sub = os.popen(['git','pull'],cwd = os.path.expanduser(g.repo.get('path')),stdout = subprocess.PIPE, stderr=subprocess.PIPE)
+            sub = os.popen(['git','pull'],cwd = os.path.expanduser(repo.get('path')),stdout = subprocess.PIPE, stderr=subprocess.PIPE)
             out,err = sub.communicate()
             ret = sub.returncode
             if ret == 0:
