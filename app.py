@@ -1,9 +1,10 @@
 from flask import Flask,request,g
 import json
+import logging
 from flask import g
-
 app = Flask(__name__)
-
+app.logger.setLevel(logging.DEBUG)
+logging.basicConfig()
 def load_repos():
     with open('repos.json') as fp:
         repos = json.load(fp)
