@@ -50,7 +50,6 @@ def payload():
                 'msg':'Wrong secret_key'
             })
         # Now we trust the post
-        data = request.data.get_json()
         try:
             sub = os.popen(['git','pull'],cwd = os.path.expanduser(g.repo.get('path')),stdout = subprocess.PIPE, stderr=subprocess.PIPE)
             out,err = sub.communicate()
