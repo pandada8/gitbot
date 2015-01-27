@@ -1,0 +1,4 @@
+- branch: master
+  secret_key: test
+  name: pandada8/test
+  path: ~/test
